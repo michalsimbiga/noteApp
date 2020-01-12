@@ -2,7 +2,7 @@ package com.application.di
 
 import com.application.di.module.overviewActivity.OverviewActivityModule
 import com.application.di.module.overviewActivity.OverviewModule
-import com.application.ui.main.OverviewActivity
+import com.application.ui.overview.OverviewActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

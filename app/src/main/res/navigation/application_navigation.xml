@@ -6,6 +6,7 @@
 
     <fragment
         android:id="@+id/overview_fragment"
+        android:name="com.application.ui.overview.OverviewFragment"
         android:label="OverviewFragment" />
 
 </navigation>
