@@ -7,6 +7,5 @@ import javax.inject.Inject
 
 open class BaseActivity: DaggerAppCompatActivity() {
 
-    @Inject lateinit var vmFactory: ViewModelProvider.Factory
     @Inject lateinit var savedStateVMFactory: AssistedViewModelFactory
 }

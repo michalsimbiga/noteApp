@@ -11,12 +11,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel @AssistedInject constructor(
+class OverviewViewModel @AssistedInject constructor(
     private val repository: MyRepository,
     @Assisted private val stateHandle: SavedStateHandle): ViewModel() {
 
     @AssistedInject.Factory
-    interface Factory : ViewModelAssistedFactory<MainViewModel>
+    interface Factory : ViewModelAssistedFactory<OverviewViewModel>
 
     private val jokes: MutableLiveData<Response<List<Joke>>> by lazy {
         MutableLiveData<Response<List<Joke>>>().also {
