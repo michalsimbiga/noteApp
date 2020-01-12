@@ -8,4 +8,6 @@
     <color name="bottomGradient">#5342B5</color>
 
     <color name="gray_half_transparent">#90FFFFFF</color>
+
+    <color name="black_half_transparent">#DD000000</color>
 </resources>

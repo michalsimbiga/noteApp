@@ -16,4 +16,31 @@
         <item name="android:opacity">opaque</item>
     </style>
 
+    <style name="NoteMonthYearText" parent="IndicatorText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:opacity">opaque</item>
+    </style>
+
+    <style name="NoteDayText" parent="NoteMonthYearText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="NoteHeaderSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NoteContentSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black_half_transparent</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NoteTimeSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
 </resources>
