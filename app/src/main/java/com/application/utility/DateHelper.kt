@@ -11,7 +11,7 @@ class DateHelper(date: Date) {
     val ampm = DateFormat.format(AM_PM, date)
     val minute = DateFormat.format(MINUTES, date)
     val hour = DateFormat.format(HOUR, date)
-    val fullHour = "$hour:$minute$ampm"
+    val fullHour = "$hour:$minute $ampm"
 
     companion object {
         private const val MONTH_SHORT_NAME = "MMM"
