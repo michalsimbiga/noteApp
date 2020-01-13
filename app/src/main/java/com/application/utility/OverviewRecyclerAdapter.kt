@@ -1,6 +1,5 @@
 package com.application.utility
 
-import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +15,16 @@ class OverviewRecyclerAdapter : RecyclerView.Adapter<BaseViewHolder<*>>() {
         autoNotify(oldList, newList) { oldData, newData -> oldData == newData }
     }
 
+    private var _comparator: Comparator<Note>? = null
+
     fun setItems(list: List<Note>) {
-        listOfNotes = list
+        val newList = mutableListOf<Note>()
+        newList.addAll(list)
+        _comparator?.let { comparator -> newList.sortWith(comparator) }
+        listOfNotes = newList
     }
+
+    fun setComparator(comparator: Comparator<Note>) { _comparator = comparator }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val inflater = LayoutInflater.from(parent.context)

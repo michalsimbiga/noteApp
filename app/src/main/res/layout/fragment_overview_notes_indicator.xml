@@ -2,43 +2,43 @@
 <layout>
 
     <data>
+
         <variable
             name="numOfItems"
             type="Integer" />
     </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:orientation="horizontal">
-
-    <View
-        android:id="@+id/indicator_start"
-        android:background="@drawable/indicator"
-        android:rotation="180"
-        android:layout_width="@dimen/indicator_line_width"
-        android:layout_height="@dimen/separator_height"
-        android:layout_gravity="center" />
-
-    <TextView
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:id="@+id/indicator_text"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:text="@{String.format(@string/indicator_format_text, numOfItems)}"
-        style="@style/IndicatorText"
-         />
+        android:orientation="horizontal">
 
-    <View
-        android:id="@+id/indicator_end"
-        android:background="@drawable/indicator"
-        android:layout_width="@dimen/indicator_line_width"
-        android:layout_height="@dimen/separator_height"
-        android:layout_gravity="center" />
+        <View
+            android:id="@+id/indicator_start"
+            android:layout_width="@dimen/indicator_line_width"
+            android:layout_height="@dimen/separator_height"
+            android:layout_gravity="center"
+            android:background="@drawable/indicator"
+            android:rotation="180" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/indicator_text"
+            style="@style/IndicatorText"
+            totalOf="@{numOfItems}"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center" />
+
+        <View
+            android:id="@+id/indicator_end"
+            android:layout_width="@dimen/indicator_line_width"
+            android:layout_height="@dimen/separator_height"
+            android:layout_gravity="center"
+            android:background="@drawable/indicator" />
+
+    </LinearLayout>
 </layout>

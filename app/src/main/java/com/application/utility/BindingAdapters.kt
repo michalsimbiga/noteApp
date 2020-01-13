@@ -6,6 +6,6 @@ import com.application.R
 
 @BindingAdapter("totalOf")
 fun TextView.bindTotalOf(total: Int){
-    val indicatorText = resources.getString(R.string.indicator_text) + total.toString()
+    val indicatorText = resources.getString(R.string.indicator_text) + " " + total.toString()
     text = indicatorText
 }
