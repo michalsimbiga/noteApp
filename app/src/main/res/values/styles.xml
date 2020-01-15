@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/app_background_gradient_drawable</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorControlHighlight">@color/topGradient</item>
     </style>
 
     <style name="IndicatorText" parent="TextAppearance.AppCompat">
