@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/overview_fragment"
         android:icon="@drawable/ic_home"
         android:title="Home"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/empty"
-        tools:ignore="MenuTitle" />
-
-<!--    <item-->
-<!--        android:id="@+id/navigation_add"-->
-<!--        android:icon="@drawable/ic_add_circle"-->
-<!--        android:iconTint="@color/topGradient"-->
-<!--        android:title="Add"-->
-<!--        android:checked="true"-->
-<!--        app:showAsAction="ifRoom" />-->
+        android:id="@+id/add_fragment"
+        android:checked="true"
+        android:icon="@drawable/ic_add_circle"
+        android:iconTint="@color/topGradient"
+        android:title="Add"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/navigation_files"

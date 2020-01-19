@@ -2,5 +2,4 @@
     <string name="app_name">NoteApp</string>
 
     <string name="indicator_text">A total of </string>
-    <string name="indicator_format_text">A total of $s</string>
 </resources>

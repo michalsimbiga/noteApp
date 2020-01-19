@@ -11,7 +11,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.fieldcode.grabatech"
+        applicationId "com.android.noteapp"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -78,7 +78,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
 
     //UI
-    implementation 'com.google.android.support.design.27.1.0'
+
     implementation 'com.google.android.material:material:1.0.0'
     implementation "androidx.recyclerview:recyclerview:1.0.0"
     implementation "androidx.cardview:cardview:1.0.0"
