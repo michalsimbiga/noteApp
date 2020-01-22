@@ -1,22 +1,20 @@
 package com.application.di
 
-import com.application.di.module.addModule.AddMainModule
-import com.application.di.module.addModule.AddModule
-import com.application.di.module.overviewModule.OverviewMainModule
-import com.application.di.module.overviewModule.OverviewModule
+import com.application.ui.add.AddFragment
 import com.application.ui.overview.OverviewActivity
+import com.application.ui.overview.OverviewFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ActivityBuilder {
 
-    @ContributesAndroidInjector(
-        modules = [
-            OverviewMainModule::class,
-            OverviewModule::class,
-            AddMainModule::class,
-            AddModule::class]
-    )
+    @ContributesAndroidInjector
     abstract fun bindOverviewActivity(): OverviewActivity
+
+    @ContributesAndroidInjector
+    abstract fun bindAddFragment(): AddFragment
+
+    @ContributesAndroidInjector
+    abstract fun bindOverviewFragment(): OverviewFragment
 }

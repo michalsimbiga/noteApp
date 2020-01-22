@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent">
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="25dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="ADD FRAGMENT"/>
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/add_fragment_date_and_time"
+                style="@style/NoteTimeLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                tools:text="31 Dec 01:30" />
+
+            <EditText
+                android:id="@+id/add_fragment_header"
+                style="@style/NoteHeaderLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                tools:text="Today is a happy day..." />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gray_half_transparent" />
+
+            <EditText
+                android:id="@+id/add_fragment_content"
+                style="@style/NoteContentSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="top"
+                android:layout_marginEnd="20dp"
+                tools:text="Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.
+Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.
+Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in.
+Solum prompta inimicus at mel." />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </layout>

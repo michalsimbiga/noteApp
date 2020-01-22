@@ -5,7 +5,7 @@ import com.application.MyApplication
 import com.application.di.module.AppModule
 import com.application.di.module.NetworkModule
 import com.application.di.module.RepositoryModule
-import com.application.di.module.ViewModelAssistedFactoriesModule
+import com.application.di.module.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -20,7 +20,7 @@ import javax.inject.Singleton
         AppModule::class,
         NetworkModule::class,
         RepositoryModule::class,
-        ViewModelAssistedFactoriesModule::class
+        ViewModelModule::class
     ]
 )
 interface AppComponent : AndroidInjector<MyApplication> {

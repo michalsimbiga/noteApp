@@ -6,17 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.application.databinding.FragmentOverviewBinding
 import com.application.model.Note
-import com.application.ui.base.BaseFragment
 import com.application.utility.DateAscendingComparator
-import com.application.utility.DateDescendingComparator
 import com.application.utility.OverviewRecyclerAdapter
+import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_overview.*
+import javax.inject.Inject
 
-class OverviewFragment : BaseFragment() {
+class OverviewFragment : DaggerFragment() {
 
-    private val viewModel: OverviewViewModel by viewModels { savedStateVMFactory }
+    @Inject
+    lateinit var vmFactory: ViewModelProvider.Factory
+
+    private val viewModel: OverviewViewModel by viewModels { vmFactory }
 
     private val recyclerAdapter =
         OverviewRecyclerAdapter().apply { setComparator(DateAscendingComparator()) }

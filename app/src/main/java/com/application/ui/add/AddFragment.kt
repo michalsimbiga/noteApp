@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.application.databinding.FragmentAddBinding
-import com.application.ui.base.BaseFragment
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class AddFragment : BaseFragment() {
+class AddFragment : DaggerFragment() {
 
-    private val viewModel: AddViewModel by viewModels { savedStateVMFactory }
+    @Inject
+    lateinit var vmFactory: ViewModelProvider.Factory
 
     private lateinit var binding: FragmentAddBinding
 
