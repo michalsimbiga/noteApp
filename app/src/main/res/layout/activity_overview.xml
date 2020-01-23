@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_overview_toolbar"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -13,7 +21,7 @@
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_overview_toolbar"
         app:navGraph="@navigation/application_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -22,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/bottom_navigation_background"
-        android:elevation="1dp"
+        android:elevation="5dp"
         app:itemIconTint="@drawable/bottom_nav_icon_background"
         app:labelVisibilityMode="unlabeled"
         app:layout_constrainedHeight="true"

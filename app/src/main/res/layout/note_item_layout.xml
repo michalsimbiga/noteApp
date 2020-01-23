@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/recycler_note_date_month_year"
             tools:text="31" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="@dimen/zero_dp"
             android:layout_height="@dimen/zero_dp"
             app:cardBackgroundColor="@android:color/white"
@@ -64,7 +64,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:fontFamily="@font/montserrat"
                     android:text="@{note.title}"
                     tools:text="This is a simple header" />
 
@@ -75,7 +74,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:ellipsize="end"
-                    android:fontFamily="@font/montserrat"
                     android:lines="2"
                     android:text="@{note.content}"
                     android:textColor="@android:color/black"
@@ -86,12 +84,11 @@
                     style="@style/NoteTimeSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
                     android:text="@{date.fullHour}"
                     tools:text="This is a simple header" />
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

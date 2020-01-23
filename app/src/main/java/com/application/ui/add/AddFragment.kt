@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.application.databinding.FragmentAddBinding
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.activity_overview.*
 import javax.inject.Inject
 
 class AddFragment : DaggerFragment() {
@@ -27,6 +28,12 @@ class AddFragment : DaggerFragment() {
         with(binding) {
             lifecycleOwner = viewLifecycleOwner
             return root
+        }
+    }
+
+    private fun setupToolbar(){
+        requireActivity().apply {
+            activity_overview_toolbar.setMenu()
         }
     }
 }

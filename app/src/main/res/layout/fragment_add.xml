@@ -3,64 +3,90 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="25dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/add_fragment_date_and_time"
                 style="@style/NoteTimeLarge"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/zero_dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:hint="Date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="31 Dec 01:30" />
+
 
             <EditText
                 android:id="@+id/add_fragment_header"
                 style="@style/NoteHeaderLarge"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/zero_dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:inputType="textCapSentences"
+                android:hint="Type in note title here..."
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@id/add_fragment_date_and_time"
+                app:layout_constraintStart_toStartOf="@id/add_fragment_date_and_time"
+                android:imeOptions="actionNext"
+                android:background="@null"
+                android:nextFocusDown="@id/add_fragment_content"
+                app:layout_constraintTop_toBottomOf="@id/add_fragment_date_and_time"
                 tools:text="Today is a happy day..." />
 
             <View
-                android:layout_width="match_parent"
+                android:id="@+id/add_fragment_separator"
+                android:layout_width="@dimen/zero_dp"
                 android:layout_height="2dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/gray_half_transparent" />
+                android:background="@color/gray_half_transparent"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="@id/add_fragment_date_and_time"
+                app:layout_constraintStart_toStartOf="@id/add_fragment_date_and_time"
+                app:layout_constraintTop_toBottomOf="@id/add_fragment_header" />
 
             <EditText
                 android:id="@+id/add_fragment_content"
                 style="@style/NoteContentSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="@dimen/zero_dp"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_marginBottom="20dp"
+                android:ellipsize="end"
+                android:background="@null"
                 android:gravity="top"
-                android:layout_marginEnd="20dp"
+                android:imeOptions="actionDone"
+                android:hint="Type in note content here..."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/add_fragment_header"
+                app:layout_constraintStart_toStartOf="@id/add_fragment_header"
+                app:layout_constraintTop_toBottomOf="@id/add_fragment_separator"
                 tools:text="Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.
 Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in. Solum prompta inimicus at mel.
 Lorem ipsum dolor sit amet, id eos maiorum dissentiunt, eam an esse dolorum theophrastus. Blandit maluisset conclusionemque id eum, sit no nobis dolore eirmod. Ad cum ullum veritus constituam. Eam prompta eligendi iudicabit in.
 Solum prompta inimicus at mel." />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </layout>
