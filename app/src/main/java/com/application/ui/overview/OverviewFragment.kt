@@ -44,7 +44,7 @@ class OverviewFragment : DaggerFragment() {
         binding = FragmentOverviewBinding.inflate(inflater, container, false)
 
         with(binding) {
-            lifecycleOwner = this@OverviewFragment.viewLifecycleOwner
+            lifecycleOwner = viewLifecycleOwner
             return root
         }
     }
@@ -57,5 +57,9 @@ class OverviewFragment : DaggerFragment() {
         viewModel.savedNotes.observe(viewLifecycleOwner, noteObserver)
 
         viewModel.getSavedNotes()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

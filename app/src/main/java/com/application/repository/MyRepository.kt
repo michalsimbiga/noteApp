@@ -11,36 +11,43 @@ class MyRepository(private val restApi: RestApi) : BaseRepository() {
 
     private val mockedNotes = listOf(
         Note(
+            uid = 1,
             created = Date(1577973662000),
             title = "Mi first note",
             content = "this is first note content"
         ),
         Note(
+            uid = 2,
             created = Date(1578675912000),
             title = "Mi second note",
             content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum varius. Purus viverra accumsan in nisl nisi scelerisque eu ultrices. Tincidunt eget nullam non nisi est. Sed sed risus pretium quam vulputate dignissim. Arcu non sodales neque sodales ut etiam sit amet. Pellentesque sit amet porttitor eget dolor morbi non. Ut lectus arcu bibendum at varius. Pretium viverra suspendisse potenti nullam ac. Libero nunc consequat interdum varius sit amet mattis vulputate enim. Euismod lacinia at quis risus sed vulputate odio ut."
         ),
         Note(
+            uid = 3,
             created = Date(1578863785000),
             title = "Mi third note",
             content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum varius. Purus viverra accumsan in nisl nisi scelerisque eu ultrices. Tincidunt eget nullam non nisi est. Sed sed risus pretium quam vulputate dignissim. Arcu non sodales neque sodales ut etiam sit amet. Pellentesque sit amet porttitor eget dolor morbi non. Ut lectus arcu bibendum at varius. Pretium viverra suspendisse potenti nullam ac. Libero nunc consequat interdum varius sit amet mattis vulputate enim. Euismod lacinia at quis risus sed vulputate odio ut."
         ),
         Note(
+            uid = 4,
             created = Date(1578675912000),
             title = "Mi fourth note",
             content = "this is fourth note content"
         ),
         Note(
+            uid = 5,
             created = Date(1578848712000),
             title = "Mi fifth note",
             content = "this is fifth note content"
         ),
         Note(
+            uid = 8,
             created = Date(1578675912000),
             title = "Mi sixth note",
             content = "this is sixth note content"
         ),
         Note(
+            uid = 7,
             created = Date(1578848712000),
             title = "Mi seventh note",
             content = "this is seventh note content"

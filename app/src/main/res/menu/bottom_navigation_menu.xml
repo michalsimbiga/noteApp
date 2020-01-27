@@ -11,7 +11,7 @@
     <item
         android:id="@+id/add_fragment"
         android:checked="true"
-        android:icon="@drawable/ic_add_circle_large"
+        android:icon="@drawable/ic_add"
         android:iconTint="@color/topGradient"
         android:title="Add"
         app:showAsAction="ifRoom" />
