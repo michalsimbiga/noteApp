@@ -13,8 +13,10 @@ import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.application.R
 import com.application.databinding.FragmentAddBinding
+import com.application.extensions.hideKeyboard
 import com.application.utility.DateHelper
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.activity_overview.*
@@ -61,10 +63,12 @@ class AddFragment : DaggerFragment() {
                 with(binding) {
                     viewModel.addNote(
                         addFragmentDateAndTime.text.toString(),
-                        addFragmentHeader.toString(),
-                        addFragmentContent.toString()
+                        addFragmentHeader.text.toString(),
+                        addFragmentContent.text.toString()
                     )
                 }
+                hideKeyboard()
+                findNavController().popBackStack()
             }
         }
         true

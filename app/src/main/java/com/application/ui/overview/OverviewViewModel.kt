@@ -14,11 +14,10 @@ class OverviewViewModel(
     private val localDataRepository: LocalDataRepository
 ) : ViewModel() {
 
-    private val _savedNotes = MutableLiveData<List<Note>>()
-    val savedNotes: LiveData<List<Note>> = _savedNotes
+    val savedNotes: LiveData<List<Note>>
 
-    fun getSavedNotes() =
-        viewModelScope.launch {
-            _savedNotes.postValue(withContext(Dispatchers.IO) { localDataRepository.getNotes() })
-        }
+    init {
+        savedNotes = localDataRepository.getNotes()
+
+    }
 }

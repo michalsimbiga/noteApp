@@ -55,11 +55,5 @@ class OverviewFragment : DaggerFragment() {
         overview_recycler_view.adapter = recyclerAdapter
 
         viewModel.savedNotes.observe(viewLifecycleOwner, noteObserver)
-
-        viewModel.getSavedNotes()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 }
