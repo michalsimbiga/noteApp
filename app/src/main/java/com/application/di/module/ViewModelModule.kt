@@ -2,10 +2,12 @@ package com.application.di.module
 
 import androidx.lifecycle.ViewModel
 import com.application.di.ViewModelKey
-import com.application.repository.LocalDataRepository
+import com.application.domain.useCase.AddNoteUseCase
+import com.application.domain.useCase.DeleteNoteUseCase
+import com.application.domain.useCase.RetrieveNotesUseCase
 import com.application.repository.MyRepository
-import com.application.ui.add.AddFragmentViewModel
-import com.application.ui.overview.OverviewViewModel
+import com.application.presentation.add.AddFragmentViewModel
+import com.application.presentation.overview.OverviewViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -22,12 +24,18 @@ class ViewModelModule {
     @Provides
     @IntoMap
     @ViewModelKey(OverviewViewModel::class)
-    fun overviewViewModel(repo: MyRepository, localDataRepository: LocalDataRepository): ViewModel =
-        OverviewViewModel(repo, localDataRepository)
+    fun overviewViewModel(
+        retrieveNotesUseCase: RetrieveNotesUseCase,
+        deleteNoteUseCase: DeleteNoteUseCase
+    ): ViewModel =
+        OverviewViewModel(
+            retrieveNotesUseCase,
+            deleteNoteUseCase
+        )
 
     @Provides
     @IntoMap
     @ViewModelKey(AddFragmentViewModel::class)
-    fun addFragmentViewModel(localDataRepository: LocalDataRepository): ViewModel =
-        AddFragmentViewModel(localDataRepository)
+    fun addFragmentViewModel(addNoteUseCase: AddNoteUseCase): ViewModel =
+        AddFragmentViewModel(addNoteUseCase)
 }

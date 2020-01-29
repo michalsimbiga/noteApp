@@ -1,27 +1,21 @@
-package com.application.ui.add
+package com.application.presentation.add
 
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuBuilder
 import androidx.core.view.forEach
-import androidx.core.view.get
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.application.R
 import com.application.databinding.FragmentAddBinding
 import com.application.extensions.hideKeyboard
-import com.application.utility.DateHelper
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.activity_overview.*
 import timber.log.Timber
-import java.util.*
 import javax.inject.Inject
 
 class AddFragment : DaggerFragment() {

@@ -1,8 +1,8 @@
 package com.application.di
 
-import com.application.ui.add.AddFragment
-import com.application.ui.overview.OverviewActivity
-import com.application.ui.overview.OverviewFragment
+import com.application.presentation.add.AddFragment
+import com.application.presentation.overview.OverviewActivity
+import com.application.presentation.overview.OverviewFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

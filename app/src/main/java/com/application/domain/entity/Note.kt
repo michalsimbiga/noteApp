@@ -1,4 +1,4 @@
-package com.application.model
+package com.application.domain.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

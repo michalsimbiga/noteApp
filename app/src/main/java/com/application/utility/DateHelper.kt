@@ -20,7 +20,7 @@ class DateHelper(date: Date) {
         private const val YEAR = "yyyy"
         private const val DAY = "dd"
         private const val AM_PM = "a"
-        private const val MINUTES = "M"
+        private const val MINUTES = "mm"
         private const val HOUR = "h"
     }
 }

@@ -6,12 +6,12 @@
 
     <fragment
         android:id="@+id/overview_fragment"
-        android:name="com.application.ui.overview.OverviewFragment"
+        android:name="com.application.presentation.overview.OverviewFragment"
         android:label="My Notes" />
 
     <fragment
         android:id="@+id/add_fragment"
-        android:name="com.application.ui.add.AddFragment"
+        android:name="com.application.presentation.add.AddFragment"
         android:label=" " />
 
 </navigation>

@@ -5,7 +5,8 @@ import java.text.SimpleDateFormat
 import java.time.Instant
 import java.util.*
 
-val dateFormatWithTimeForTicketDetail = SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault())
+val dateFormatWithTimeForTicketDetail = SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault())
+val dateFormatHourMinutes = SimpleDateFormat("HH:mm", Locale.getDefault())
 
 class DateConverter {
     @TypeConverter

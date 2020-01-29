@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.application.databinding.NoteItemLayoutBinding
 import com.application.extensions.autoNotify
-import com.application.model.Note
+import com.application.domain.entity.Note
 import java.util.*
 import kotlin.properties.Delegates
 
@@ -24,7 +24,9 @@ class OverviewRecyclerAdapter : RecyclerView.Adapter<BaseViewHolder<*>>() {
         listOfNotes = newList
     }
 
-    fun setComparator(comparator: Comparator<Note>) { _comparator = comparator }
+    fun setComparator(comparator: Comparator<Note>) {
+        _comparator = comparator
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val inflater = LayoutInflater.from(parent.context)
@@ -37,21 +39,20 @@ class OverviewRecyclerAdapter : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         if (holder is NoteViewHolder) holder.bind(listOfNotes[position], null)
-        else holder.bind()
     }
 }
 
-class NoteViewHolder(private val binding: NoteItemLayoutBinding) :
-    BaseViewHolder<Note>(binding.root) {
-    override fun bind(item: Note?, onClickListener: ((Note) -> Unit)?) {
-
-        val dateToBind = item?.let { DateHelper(it.created) }
-
-        with(binding) {
-            note = item
-            date = dateToBind?.let { it }
-            executePendingBindings()
-        }
-    }
-
-}
+//class NoteViewHolder(private val binding: NoteItemLayoutBinding) :
+//    BaseViewHolder<Note>(binding.root) {
+//    override fun bind(item: Note?, onClickListener: ((Note) -> Unit)?) {
+//
+//        val dateToBind = item?.let { DateHelper(it.created) }
+//
+//        with(binding) {
+//            note = item
+//            date = dateToBind?.let { it }
+//            executePendingBindings()
+//        }
+//    }
+//
+//}

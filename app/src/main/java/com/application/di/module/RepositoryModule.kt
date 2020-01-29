@@ -2,9 +2,10 @@ package com.application.di.module
 
 import android.app.Application
 import androidx.room.Room
+import com.application.data.database.DatabaseRepositoryImpl
+import com.application.domain.common.DatabaseRepository
 import com.application.net.RestApi
-import com.application.repository.LocalDataRepository
-import com.application.repository.LocalDatabase
+import com.application.domain.common.LocalDatabase
 import com.application.repository.MyRepository
 import dagger.Module
 import dagger.Provides
@@ -30,6 +31,6 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideLocalDataRepository(localDatabase: LocalDatabase): LocalDataRepository =
-        LocalDataRepository(localDatabase)
+    fun provideDatabaseRepositoryImpl(localDatabase: LocalDatabase): DatabaseRepository =
+        DatabaseRepositoryImpl(localDatabase)
 }
