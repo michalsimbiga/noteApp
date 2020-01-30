@@ -15,6 +15,7 @@ import com.application.R
 import com.application.databinding.FragmentAddBinding
 import com.application.extensions.hideKeyboard
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.activity_overview.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -27,14 +28,17 @@ class AddFragment : DaggerFragment() {
 
     private val viewModel: AddFragmentViewModel by viewModels { vmFactory }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+//        registerForContextMenu(requireActivity().findViewById(R.id.activity_overview_toolbar))
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        setHasOptionsMenu(true)
-        registerForContextMenu(requireActivity().findViewById(R.id.activity_overview_toolbar))
         binding = FragmentAddBinding.inflate(inflater, container, false)
 
         with(binding) {
@@ -44,13 +48,14 @@ class AddFragment : DaggerFragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        Timber.i("TESTING onCreateOptionsMenu")
         menu.clear()
         inflater.inflate(R.menu.toolbar_add_fragment_menu, menu)
-        menu.forEach { item -> item.setOnMenuItemClickListener(onMenuClick) }
+//        menu.forEach { item -> item.setOnMenuItemClickListener(onMenuClick) }
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    private val onMenuClick = MenuItem.OnMenuItemClickListener { item ->
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.add_fragment_done_button -> {
                 Timber.i("TESTING onActionOk clicked create ticket")
@@ -65,11 +70,7 @@ class AddFragment : DaggerFragment() {
                 findNavController().popBackStack()
             }
         }
-        true
-    }
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        Timber.i("TESTING onContextItemSelected")
         return true
     }
+
 }

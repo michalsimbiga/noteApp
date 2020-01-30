@@ -3,8 +3,6 @@ package com.application.presentation.overview
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.application.R
 import dagger.android.support.DaggerAppCompatActivity
@@ -20,9 +18,12 @@ class OverviewActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_overview)
+
         setSupportActionBar(toolbar)
-        setupActionBarWithNavController(navController, appBarConfig)
-        NavigationUI.setupWithNavController(bottom_navigation, navController)
-        toolbar.setupWithNavController(navController, appBarConfig)
+        setupBottomNav()
+        setupToolbarWithNav()
     }
+
+    private fun setupBottomNav() = bottom_navigation.setupWithNavController(navController)
+    private fun setupToolbarWithNav() = toolbar.setupWithNavController(navController, appBarConfig)
 }

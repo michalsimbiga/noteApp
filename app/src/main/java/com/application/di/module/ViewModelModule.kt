@@ -26,11 +26,13 @@ class ViewModelModule {
     @ViewModelKey(OverviewViewModel::class)
     fun overviewViewModel(
         retrieveNotesUseCase: RetrieveNotesUseCase,
-        deleteNoteUseCase: DeleteNoteUseCase
+        deleteNoteUseCase: DeleteNoteUseCase,
+        addNoteUseCase: AddNoteUseCase
     ): ViewModel =
         OverviewViewModel(
             retrieveNotesUseCase,
-            deleteNoteUseCase
+            deleteNoteUseCase,
+            addNoteUseCase
         )
 
     @Provides

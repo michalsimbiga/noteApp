@@ -30,13 +30,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/bottom_navigation_background"
-        android:elevation="5dp"
+        android:elevation="15dp"
+        app:layout_constrainedHeight="true"
         app:itemIconTint="@drawable/bottom_nav_icon_background"
         app:labelVisibilityMode="labeled"
         app:itemTextColor="@drawable/bottom_nav_icon_background"
-        app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:itemHorizontalTranslationEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 

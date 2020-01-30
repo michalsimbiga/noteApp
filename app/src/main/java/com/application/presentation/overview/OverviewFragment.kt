@@ -1,8 +1,8 @@
 package com.application.presentation.overview
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
@@ -14,9 +14,8 @@ import com.application.databinding.FragmentOverviewBinding
 import com.application.domain.entity.Note
 import com.application.utility.DateAscendingComparator
 import com.application.utility.OverviewListAdapter
-import com.application.utility.OverviewRecyclerAdapter
 import com.application.utility.SwipeToDeleteCallback
-import com.google.android.material.behavior.SwipeDismissBehavior
+import com.google.android.material.snackbar.Snackbar
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_overview.*
 import timber.log.Timber
@@ -30,7 +29,10 @@ class OverviewFragment : DaggerFragment() {
     private val viewModel: OverviewViewModel by viewModels { vmFactory }
 
     private val itemTouchHelper by lazy {
-        ItemTouchHelper(SwipeToDeleteCallback { note -> viewModel.deleteNote(note) })
+        ItemTouchHelper(SwipeToDeleteCallback { note ->
+            viewModel.deleteNote(note)
+            allowToRestoreNote(note)
+        })
     }
 
     private val recyclerAdapter =
@@ -106,5 +108,14 @@ class OverviewFragment : DaggerFragment() {
         itemTouchHelper.attachToRecyclerView(overview_recycler_view)
 
         viewModel.savedNotes.observe(viewLifecycleOwner, noteObserver)
+    }
+
+    private fun allowToRestoreNote(note: Note) {
+        Snackbar.make(binding.fragmentOverviewMainLayout, "Note Removed", Snackbar.LENGTH_LONG)
+            .apply {
+                setAction("UNDO") { viewModel.addNote(note) }
+                setActionTextColor(Color.YELLOW)
+                show()
+            }
     }
 }
